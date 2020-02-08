@@ -8,7 +8,10 @@ var occury = [];
 var month_occ = [];
 var occurm = [];
 
+
 function init() {
+
+
 
 //###################getting data from JSON###########################
 
@@ -42,8 +45,8 @@ function init() {
     occurm.push(value);
     })
 
-//console.log(year_occ);
-//console.log(occury)
+console.log(year_occ);
+console.log(occury)
 
 
 //#########################Graphs##################################### https://plot.ly/javascript/axes/    https://stackoverflow.com/questions/55908032/show-full-axis-range-for-plotly-chart
@@ -63,7 +66,7 @@ function init() {
   var layout = {
     title: "Occurence of fires by year",
     xaxis: { title: "Year",
-            range: [2015, 2019],
+            //range: [2015, 2019],
             showgrid: true,
             gridwidth: 2,
             autotick: false,
@@ -99,6 +102,7 @@ function getData() {
 
   var dataset = dropdownMenu.property("value");
 
+  console.log(dataset);
 
 
   var x = []
@@ -115,7 +119,7 @@ function getData() {
     var update = {
       title: "Occurence of fires by year",
       xaxis: { title: "Year",
-              range: [2015, 2019],
+              //range: [2015, 2019],
               showgrid: true,
               gridwidth: 2,
               autotick: false,
@@ -149,16 +153,16 @@ function getData() {
     var update = {
       title: "Occurence of fires by Month",
       xaxis: { title: "Month",
-              range: [1, 12],
+              //range: [1, 12],
               showgrid: true,
               gridwidth: 2,
-              autotick: false,
+              //autotick: false,
               ticks: 'outside',
               showline: true,
-              tickvals:["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], 
-              ticktext:["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+              tickvals:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
+              ticktext:["January", "February", "March", "April", "May", "June", "July", 
+                        "August", "September", "October", "November", "December"],
 
-    
     },
       yaxis: { title: "# of fires" ,
               rangemode:'tozero',
