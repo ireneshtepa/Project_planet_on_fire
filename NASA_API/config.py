@@ -1,3 +1,3 @@
-# NASA API key
+#NASA API Key
 
-api_key = "fTsy5sitCV2a9IA1XsFdrGdV98zOneSXIcpajthb"
+nkey = "7GDPVrtzyAnPh9V3BW6kWNj51Np4b7rfebuzQHeR"
