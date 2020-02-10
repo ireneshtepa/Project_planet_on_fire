@@ -1,16 +1,42 @@
 var fireMarkers = [];
+ 
+ 
+ url = "http://127.0.0.1:5000/api"
+ jsonData = d3.json(url).then(function(data){
+  console.log(data); 
+
+  console.log(data[3])});
+//   for (i = 0; i < data.length; i++) {
+//      fireMarkers.push(data[i].latitude)
+//  };  
+
+//  for (i = 0; i < data.length; i++) {
+//  fireMarkers.push(L.marker(
+//   fireMarkers[i], {
+//   color: "red",
+//   fillColor: "red",
+//   radius: 500
+// }).bindPopup('fire'))
+
+console.log(fireMarkers);
+ 
+
+//  for (var i = 0; i < cities.length; i++) {
+//    // loop through the cities array, create a new marker, push it to the cityMarkers array
+//    cityMarkers.push(
+//      L.marker(cities[i].location).bindPopup("<h1>" + cities[i].name + "</h1>")
+//    );
+//  }
+ 
+ // Add all the cityMarkers to a new layer group.
+ // Now we can handle them as one group instead of referencing each individually
 
 
- //firemarkers plotting info from rested API
- //url = "http://127.0.0.1:5000/api"
- //jsonData = d3.json(url).then(function(data){
- //    fireMarkers.push(`[${data.latitude}, ${data.longtitude}]`);
-//     (bright_ti4)
- //});
 
 
 
 
+//console.log(fireMarkers);
 
 // Define variables for base layers
 var satellite = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -27,7 +53,7 @@ var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?
   accessToken: API_KEY
 });
 
-// Create two separate layer group
+// Create marker layer group
 var fires = L.layerGroup(fireMarkers);
 
 // Create a baseMaps object
@@ -54,7 +80,3 @@ var myMap = L.map("map", {
 L.control.layers(baseMaps, overlayMaps, {
   collapsed: false
 }).addTo(myMap);
-
-
-
-
