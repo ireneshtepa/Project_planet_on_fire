@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, jsonify, json
+from flask import Flask, render_template, redirect, jsonify, json, abort, url_for
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import scrapePd
@@ -8,15 +8,17 @@ from sqlalchemy.ext.automap import automap_base
 import psycopg2
 import psycopg2.extras
 import json as simplejsonpythi
-import datetime as dt 
+import datetime as dt
+from config import postgreskey
+
 
 # Create an instance of Flask
 app = Flask(__name__)
 
-connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
+connection_string = (f"postgres:{postgreskey}@localhost:5432/planetOnFire_db")
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
-mydata = pd.read_sql_query('select * from cleaned_df', con=engine).tail()
+mydata = pd.read_sql_query('select * from cleaned_df', con=engine)
 myJsonData = mydata.to_json(orient='records')
 
 @app.route("/")
@@ -29,6 +31,12 @@ def myData():
 
    return (myJsonData)
 
+@app.route("/refresh")
+def refreshData():
+
+   scrapePd.scrape_data()
+
+   return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
