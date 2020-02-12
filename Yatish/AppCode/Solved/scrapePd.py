@@ -58,3 +58,4 @@ if ((date_check)!=todaysDate):
 
 else:
     print("table exists")
+

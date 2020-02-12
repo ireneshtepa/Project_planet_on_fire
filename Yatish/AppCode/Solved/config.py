@@ -1,2 +1,2 @@
 # Enter your API key
-postgreskey = "Yatish28$"
+key = 'Yatish28$'

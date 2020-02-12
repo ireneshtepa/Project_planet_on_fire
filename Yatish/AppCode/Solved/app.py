@@ -9,13 +9,14 @@ import psycopg2
 import psycopg2.extras
 import json as simplejsonpythi
 import datetime as dt
-from config import postgreskey
+
+
 
 
 # Create an instance of Flask
 app = Flask(__name__)
 
-connection_string = (f"postgres:{postgreskey}@localhost:5432/planetOnFire_db")
+connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
 mydata = pd.read_sql_query('select * from cleaned_df', con=engine)
