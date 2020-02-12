@@ -15,7 +15,7 @@ function init() {
 
 //###################getting data from JSON###########################
 
-  d3.json("africa.json").then(function(data) {
+  d3.json("algeria.json").then(function(data) {
     
     for (var i = 0; i < data.length; i++) { 
       var date = data[i].acq_date;
@@ -129,7 +129,7 @@ function getData() {
   if (dataset === 'Yearly' && dataset1 === 'North-America') {
 
 
-      d3.json("northamerica.json").then(function(data) {
+      d3.json("belize.json").then(function(data) {
       
         for (var i = 0; i < data.length; i++) { 
           var date = data[i].acq_date;
@@ -187,7 +187,7 @@ function getData() {
   if (dataset === 'Monthly' && dataset1 === 'North-America') {
 
 
-      d3.json("northamerica.json").then(function(data) {
+      d3.json("belize.json").then(function(data) {
       
         for (var i = 0; i < data.length; i++) { 
           var date = data[i].acq_date;
@@ -245,7 +245,7 @@ function getData() {
   if (dataset === 'Yearly' && dataset1 === 'South-America') {
 
 
-      d3.json("southamerica.json").then(function(data) {
+      d3.json("ecuador.json").then(function(data) {
       
         for (var i = 0; i < data.length; i++) { 
           var date = data[i].acq_date;
@@ -303,7 +303,7 @@ function getData() {
 
 
 
-    d3.json("southamerica.json").then(function(data) {
+    d3.json("ecuador.json").then(function(data) {
 
     
       for (var i = 0; i < data.length; i++) { 
@@ -370,7 +370,7 @@ function getData() {
   if (dataset === 'Yearly' && dataset1 === 'Euroasia') {
 
 
-    d3.json("euroasia.json").then(function(data) {
+    d3.json("spain.json").then(function(data) {
     
       for (var i = 0; i < data.length; i++) { 
         var date = data[i].acq_date;
@@ -428,7 +428,7 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
 
 
 
-  d3.json("euroasia.json").then(function(data) {
+  d3.json("spain.json").then(function(data) {
 
   
     for (var i = 0; i < data.length; i++) { 
@@ -496,7 +496,7 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
   if (dataset === 'Yearly' && dataset1 === 'Africa') {
 
 
-    d3.json("africa.json").then(function(data) {
+    d3.json("algeria.json").then(function(data) {
     
       for (var i = 0; i < data.length; i++) { 
         var date = data[i].acq_date;
@@ -554,7 +554,7 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
 
 
 
-  d3.json("africa.json").then(function(data) {
+  d3.json("algeria.json").then(function(data) {
 
   
     for (var i = 0; i < data.length; i++) { 
@@ -623,7 +623,7 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
   if (dataset === 'Yearly' && dataset1 === 'Oceania') {
 
 
-    d3.json("oceania.json").then(function(data) {
+    d3.json("fiji.json").then(function(data) {
     
       for (var i = 0; i < data.length; i++) { 
         var date = data[i].acq_date;
@@ -681,7 +681,7 @@ if (dataset === 'Monthly' && dataset1 === 'Oceania') {
 
 
 
-  d3.json("oceania.json").then(function(data) {
+  d3.json("fiji.json").then(function(data) {
 
   
     for (var i = 0; i < data.length; i++) { 
