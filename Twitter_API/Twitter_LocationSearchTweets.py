@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+<<<<<<< HEAD
 # In[26]:
+=======
+# In[1]:
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 #import dependencies
@@ -13,7 +17,11 @@ from twitter import *
 from config import consumer_key, consumer_secret, access_token, access_token_secret
 
 
+<<<<<<< HEAD
 # In[27]:
+=======
+# In[2]:
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 #dictionary of relevant locations
@@ -45,7 +53,11 @@ location_list = [
 #print(location_list[0]["region"])
 
 
+<<<<<<< HEAD
 # In[28]:
+=======
+# In[3]:
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 #authenticate with Twitter
@@ -59,7 +71,11 @@ api = twitter.Api(consumer_key=consumer_key,
 print(api.VerifyCredentials())
 
 
+<<<<<<< HEAD
 # In[29]:
+=======
+# In[4]:
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 #sample search
@@ -72,10 +88,20 @@ for tweet in search:
     
 #oembed with single call as sample
 tweet_embed = api.GetStatusOembed(status_id=1226846606856740865,  url=None, maxwidth=None, hide_media=False, hide_thread=False, omit_script=False, align=None, related=None, lang=None)
+<<<<<<< HEAD
 print(tweet_embed)
 
 
 # In[33]:
+=======
+#print(tweet_embed)
+
+tweetembedurl = tweet_embed["html"]
+print(tweetembedurl)
+
+
+# In[5]:
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 #request variables and loop
@@ -88,6 +114,11 @@ region_dict = {}
 
 #region_dict = {"canada";[23456,98765], "usa": [67889]}
 #appending twitter ids in dictionary
+<<<<<<< HEAD
+=======
+tweets=[]
+
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 for i in location_list:
     location = i["region"]
     try:
@@ -96,6 +127,10 @@ for i in location_list:
         
         for tweet in location_search[0]:
             print(tweet.id)
+<<<<<<< HEAD
+=======
+            tweets.append(tweet.id)
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
             tweet_id = tweet.id
             
             if location in region_dict:
@@ -109,6 +144,7 @@ for i in location_list:
         print(f"{location} not found. Skipping...")
     continue
 
+<<<<<<< HEAD
 #location_tweet_embed = api.GetStatusOembed(f"status_id={}"")
 
 
@@ -117,6 +153,112 @@ for i in location_list:
 
 #print region_dict to verify the dictionary is now populated with tweet_id
 print(region_dict)
+=======
+#print(region_dict)
+
+
+# In[6]:
+
+
+tweet_id = 1227510148920332288
+
+tweettoembed = api.GetStatusOembed(status_id=tweet_id,  url=None, maxwidth=None, hide_media=False, hide_thread=False, omit_script=False, align=None, related=None, lang=None)
+
+print(tweettoembed)
+
+
+# In[7]:
+
+
+#get oembed url for each id
+
+for each_tweet in tweets:
+    tweet_id = each_tweet
+
+    try:
+        
+        tweettoembed = api.GetStatusOembed(status_id=tweet_id,  url=None, maxwidth=None, hide_media=False, hide_thread=False, omit_script=False, align=None, related=None, lang=None)
+        print(f"Processing {tweet_id}")
+        #print(tweettoembed)
+        tweetembedurl = tweettoembed["html"]
+        print(tweetembedurl)
+
+        n=+1
+        
+    except:
+        print(f"{tweet_id} not found. Skipping...")
+        continue
+
+
+# In[27]:
+
+
+def not_sure_what_i_do(name, age):
+    return(name+str(age))
+
+res = not_sure_what_i_do(name=Yash, age=5456)
+    
+res
+
+
+# In[7]:
+
+
+# #print(search)
+# for tweet in search:
+#     #print(tweet.id)
+#     tweet_id = tweet.id
+    
+#     try:
+#         #oembed
+#         tweet_embed = api.GetStatusOembed(f"(status_id={tweet_id},  url=None, maxwidth=None, hide_media=False, hide_thread=False, omit_script=False, align=None, related=None, lang=None")
+#         print(f"Processing {tweet_id}")
+#         #print(tweet_embed)
+#         tweetembedurl = tweet_embed["html"]
+#         #print(tweetembedurl)
+
+#         n=+1
+        
+#     except:
+#         print(f"{tweet_id} not foud. Skipping...")
+#     continue
+
+
+# In[22]:
+
+
+#loop through items in list to gather image urls
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+>>>>>>> 72e680e421d8c9bae51405979735b6a667d38e1a
 
 
 # In[ ]:

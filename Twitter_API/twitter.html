@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Globar Fire Data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="dark-page">
+
+<!-- Planet on fire icon -->
+<a href="index.html"><img class="nav-planet" src="planet-fire.png"></a>
+
+<!-- Navigation -->
+<!-- <nav role="navigation">
+  <ul>
+    <li id="button-style"><a href="news.html">Global Fire News</a></li>
+    <li id="button-style"><a href="stats.html">Stats</a></li>
+  </ul>
+</nav> -->
+
+<nav role="navigation">
+  <ul>
+    <li id="button-style"><a href="#" aria-haspopup="true">Choose Continent ▼</a>
+      <ul class="dropdown" aria-label="submenu">
+        <li id="menu-item"><a href="#">Africa</a></li>
+        <li id="menu-item"><a href="#">Australia</a></li>
+        <li id="menu-item"><a href="#">Eurasia</a></li>
+        <li id="menu-item"><a href="#">North America</a></li>
+        <li id="menu-item"><a href="#">South America</a></li>
+      </ul>
+    </li>
+    <li id="button-style"><a href="news.html">Global Fire News</a></li>
+    <li id="button-style"><a href="stats.html">Stats</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- API key for Mapbox -->
+<script type="text/javascript" src="config.js"></script>
+  <!-- JS -->
+<script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
