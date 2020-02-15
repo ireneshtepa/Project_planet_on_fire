@@ -1,67 +1,83 @@
 //##############Variables##########################################
-var year = []
-var month = []
-var year_list = {};
-var month_list = {};
-var year_occ = [];
-var occury = [];
-var month_occ = [];
-var occurm = [];
+var year_africa = [];         var year_euroasia = [];
+var month_africa = [];        var month_euroasia = [];
+var year_list_africa = {};    var year_list_euroasia = {};
+var month_list_africa = {};   var month_list_euroasia = {};
+var year_occ_africa = [];     var year_occ_euroasia = [];
+var occury_africa = [];       var occury_euroasia = [];
+var month_occ_africa  = [];   var month_occ_euroasia  = [];
+var occurm_africa = [];       var occurm_euroasia = [];
+
+var year_australia = [];         var year_southamerica = [];
+var month_australia = [];        var month_southamerica = [];
+var year_list_australia = {};    var year_list_southamerica = {};
+var month_list_australia = {};   var month_list_southamerica = {};
+var year_occ_australia = [];     var year_occ_southamerica = [];
+var occury_australia = [];       var occury_southamerica = [];
+var month_occ_australia  = [];   var month_occ_southamerica  = [];
+var occurm_australia = [];       var occurm_southamerica = [];
+
+var year_northamerica = [];         
+var month_northamerica = [];        
+var year_list_northamerica = {};    
+var month_list_northamerica = {};   
+var year_occ_northamerica = [];     
+var occury_northamerica = [];       
+var month_occ_northamerica  = [];   
+var occurm_northamerica = [];       
+
+
 
 
 function init() {
 
+//###################getting AFRICA from JSON###########################
 
-
-//###################getting data from JSON###########################
-
-  d3.json("algeria.json").then(function(data) {
+  d3.json("algeria.json").then(function(data1) {
     
-    for (var i = 0; i < data.length; i++) { 
-      var date = data[i].acq_date;
-      var date_list = date.split("-")
-      year.push(parseInt(date_list[0]))
-      month.push(parseInt(date_list[1]))  
+    for (var i = 0; i < data1.length; i++) { 
+      var date1 = data1[i].acq_date;
+      var date_list1 = date1.split("-")
+      year_africa.push(parseInt(date_list1[0]))
+      month_africa.push(parseInt(date_list1[1]))  
     }
 
-//########################creating list with ocurrence######################################
+//########################creating AFRICA list with ocurrence######################################
 
-    for (var i=0; i < year.length; i++) {
-      year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
+    for (var i=0; i < year_africa.length; i++) {
+      year_list_africa[year_africa[i]] = (year_list_africa[year_africa[i]] || 0) +1 ;
     }
 
-    for (var i=0; i < month.length; i++) {
-      month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
+    for (var i=0; i < month_africa.length; i++) {
+      month_list_africa[month_africa[i]] = (month_list_africa[month_africa[i]] || 0) +1 ;
     }
 
 
-  Object.entries(year_list).forEach(([key, value]) => {
-  year_occ.push(key);
-  occury.push(value);
-  })
-
-  Object.entries(month_list).forEach(([key, value]) => {
-    month_occ.push(key);
-    occurm.push(value);
+  Object.entries(year_list_africa).forEach(([key, value]) => {
+    year_occ_africa.push(key);
+    occury_africa.push(value);
     })
 
-console.log(year_occ);
-console.log(occury)
+  Object.entries(month_list_africa).forEach(([key, value]) => {
+    month_occ_africa.push(key);
+    occurm_africa.push(value);
+    })
+   
+console.log(year_occ_africa);
+console.log(occury_africa)
 
 
 //#########################Graphs##################################### https://plot.ly/javascript/axes/    https://stackoverflow.com/questions/55908032/show-full-axis-range-for-plotly-chart
 //#####################################################################################################
 
   var trace = {
-    x: year_occ,
-    y: occury,
+    x: year_occ_africa,
+    y: occury_africa,
     type: "line",
-    //mode: "lines",
 
   };
 
-
-  var data = [trace]
+  var datat = [trace]
 
   var layout = {
     title: "Africa: Yearly occurence of fires",
@@ -86,11 +102,164 @@ console.log(occury)
      
   };
 
-  Plotly.newPlot("plot", data, layout);
 
-  })
+  console.log(datat);
+
+  Plotly.newPlot("plot", datat, layout);
+})
  
+
+
+d3.json("fiji.json").then(function(data2) {
+    
+  for (var i = 0; i < data2.length; i++) { 
+    var date2 = data2[i].acq_date;
+    var date_list2 = date2.split("-")
+    year_australia.push(parseInt(date_list2[0]))
+    month_australia.push(parseInt(date_list2[1]))  
+  }
+
+//########################creating AUSTRALIA list with ocurrence######################################
+
+  for (var i=0; i < year_australia.length; i++) {
+    year_list_australia[year_australia[i]] = (year_list_australia[year_australia[i]] || 0) +1 ;
+  }
+
+  for (var i=0; i < month_australia.length; i++) {
+    month_list_australia[month_australia[i]] = (month_list_australia[month_australia[i]] || 0) +1 ;
+  }
+
+
+Object.entries(year_list_australia).forEach(([key, value]) => {
+  year_occ_australia.push(key);
+  occury_australia.push(value);
+  })
+
+Object.entries(month_list_australia).forEach(([key, value]) => {
+  month_occ_australia.push(key);
+  occurm_australia.push(value);
+  })
+})
+
+console.log(year_occ_australia);
+console.log(occury_australia)
+
+//###################getting EUROASIA from JSON###########################
+
+d3.json("spain.json").then(function(data3) {
+    
+  for (var i = 0; i < data3.length; i++) { 
+    var date3 = data3[i].acq_date;
+    var date_list3 = date3.split("-")
+    year_euroasia.push(parseInt(date_list3[0]))
+    month_euroasia.push(parseInt(date_list3[1]))  
+  }
+
+//########################creating OCEANIA list with ocurrence######################################
+
+  for (var i=0; i < year_euroasia.length; i++) {
+    year_list_euroasia[year_euroasia[i]] = (year_list_euroasia[year_euroasia[i]] || 0) +1 ;
+  }
+
+  for (var i=0; i < month_euroasia.length; i++) {
+    month_list_euroasia[month_euroasia[i]] = (month_list_euroasia[month_euroasia[i]] || 0) +1 ;
+  }
+
+
+Object.entries(year_list_euroasia).forEach(([key, value]) => {
+  year_occ_euroasia.push(key);
+  occury_euroasia.push(value);
+  })
+
+Object.entries(month_list_euroasia).forEach(([key, value]) => {
+  month_occ_euroasia.push(key);
+  occurm_euroasia.push(value);
+  })
+})
+
+console.log(year_occ_euroasia);
+console.log(occury_euroasia);
+
+//###################getting NORTH AMERICA from JSON###########################
+
+d3.json("belize.json").then(function(data4) {
+    
+  for (var i = 0; i < data4.length; i++) { 
+    var date4 = data4[i].acq_date;
+    var date_list4 = date4.split("-")
+    year_northamerica.push(parseInt(date_list4[0]))
+    month_northamerica.push(parseInt(date_list4[1]))  
+  }
+
+//########################creating NORTH AMERICA list with ocurrence######################################
+
+  for (var i=0; i < year_northamerica.length; i++) {
+    year_list_northamerica[year_northamerica[i]] = (year_list_northamerica[year_northamerica[i]] || 0) +1 ;
+  }
+
+  for (var i=0; i < month_northamerica.length; i++) {
+    month_list_northamerica[month_northamerica[i]] = (month_list_northamerica[month_northamerica[i]] || 0) +1 ;
+  }
+
+
+Object.entries(year_list_northamerica).forEach(([key, value]) => {
+  year_occ_northamerica.push(key);
+  occury_northamerica.push(value);
+  })
+
+Object.entries(month_list_northamerica).forEach(([key, value]) => {
+  month_occ_northamerica.push(key);
+  occurm_northamerica.push(value);
+  })
+})
+
+
+console.log(year_occ_northamerica);
+console.log(occury_northamerica);
+
+//###################getting SOUTH AMERICA from JSON###########################
+
+d3.json("ecuador.json").then(function(data5) {
+    
+  for (var i = 0; i < data5.length; i++) { 
+    var date5 = data5[i].acq_date;
+    var date_list5 = date5.split("-")
+    year_southamerica.push(parseInt(date_list5[0]))
+    month_southamerica.push(parseInt(date_list5[1]))  
+  }
+
+//########################creating NORTH AMERICA list with ocurrence######################################
+
+  for (var i=0; i < year_southamerica.length; i++) {
+    year_list_southamerica[year_southamerica[i]] = (year_list_southamerica[year_southamerica[i]] || 0) +1 ;
+  }
+
+  for (var i=0; i < month_southamerica.length; i++) {
+    month_list_southamerica[month_southamerica[i]] = (month_list_southamerica[month_southamerica[i]] || 0) +1 ;
+  }
+
+
+Object.entries(year_list_southamerica).forEach(([key, value]) => {
+  year_occ_southamerica.push(key);
+  occury_southamerica.push(value);
+  })
+
+Object.entries(month_list_southamerica).forEach(([key, value]) => {
+  month_occ_southamerica.push(key);
+  occurm_southamerica.push(value);
+  })
+})
+
+console.log(year_occ_southamerica);
+console.log(occury_southamerica);
+
+
 }
+
+console.log(year_occ_southamerica);
+console.log(occury_southamerica);
+
+
 
 
 //###############################dropdown event###############################################
@@ -111,14 +280,6 @@ function getData() {
 
   console.log(dataset);
 
-      year = []
-      month = []
-      year_list = {};
-      month_list = {};
-      year_occ = [];
-      occury = [];
-      month_occ = [];
-      occurm = [];
   
   var x = [];
   var y = [];
@@ -128,27 +289,10 @@ function getData() {
 
   if (dataset === 'Yearly' && dataset1 === 'North-America') {
 
-
-      d3.json("belize.json").then(function(data) {
-      
-        for (var i = 0; i < data.length; i++) { 
-          var date = data[i].acq_date;
-          var date_list = date.split("-")
-          year.push(parseInt(date_list[0]))
-        }
-      
-        for (var i=0; i < year.length; i++) {
-          year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
-        }
-      
-        Object.entries(year_list).forEach(([key, value]) => {
-          year_occ.push(key);
-          occury.push(value);
-          })
       
 
-      x = year_occ
-      y = occury
+      x = year_occ_northamerica
+      y = occury_northamerica
 
 
       var update = {
@@ -178,7 +322,6 @@ function getData() {
       Plotly.restyle("plot", "y", [y]);
       Plotly.relayout("plot", update);
 
-    })
   }
 
 
@@ -187,25 +330,9 @@ function getData() {
   if (dataset === 'Monthly' && dataset1 === 'North-America') {
 
 
-      d3.json("belize.json").then(function(data) {
-      
-        for (var i = 0; i < data.length; i++) { 
-          var date = data[i].acq_date;
-          var date_list = date.split("-")
-          month.push(parseInt(date_list[1]))
-        }
-      
-        for (var i=0; i < month.length; i++) {
-          month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
-        }
-      
-        Object.entries(month_list).forEach(([key, value]) => {
-          month_occ.push(key);
-          occurm.push(value);
-          })
 
-      x = month_occ
-      y = occurm
+      x = month_occ_northamerica
+      y = occurm_northamerica
 
       var update = {
         title: "North America: Monthly occurence of fires",
@@ -236,7 +363,7 @@ function getData() {
       Plotly.restyle("plot", "x", [x]);
       Plotly.restyle("plot", "y", [y]);
       Plotly.relayout("plot", update);
-    })
+  
   }
 
 
@@ -245,26 +372,10 @@ function getData() {
   if (dataset === 'Yearly' && dataset1 === 'South-America') {
 
 
-      d3.json("ecuador.json").then(function(data) {
-      
-        for (var i = 0; i < data.length; i++) { 
-          var date = data[i].acq_date;
-          var date_list = date.split("-")
-          year.push(parseInt(date_list[0]))
-        }
-      
-        for (var i=0; i < year.length; i++) {
-          year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
-        }
-      
-        Object.entries(year_list).forEach(([key, value]) => {
-          year_occ.push(key);
-          occury.push(value);
-          })
     
 
-      x = year_occ
-      y = occury
+      x = year_occ_southamerica
+      y = occury_southamerica
 
 
       var update = {
@@ -293,7 +404,7 @@ function getData() {
       Plotly.restyle("plot", "x", [x]);
       Plotly.restyle("plot", "y", [y]);
       Plotly.relayout("plot", update);
-    })
+  
   }
 
 
@@ -303,33 +414,8 @@ function getData() {
 
 
 
-    d3.json("ecuador.json").then(function(data) {
-
-    
-      for (var i = 0; i < data.length; i++) { 
-        var date = data[i].acq_date;
-        var date_list = date.split("-")
-        month.push(parseInt(date_list[1]))
-      }
-
-    
-      for (var i=0; i < month.length; i++) {
-        month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
-      }
-    
-      
-      Object.entries(month_list).forEach(([key, value]) => {
-        month_occ.push(key);
-        occurm.push(value);
-        })
-    
-        console.log(month_list)
-        console.log(month_occ)
-        console.log(occurm)
-
-
-    x = month_occ
-    y = occurm
+    x = month_occ_southamerica
+    y = occurm_southamerica
 
   
 
@@ -362,34 +448,17 @@ function getData() {
       Plotly.restyle("plot", "x", [x]);
       Plotly.restyle("plot", "y", [y]);
       Plotly.relayout("plot", update);
-    })
+  
   }
 
   //##################Year option with Euroasia#####################  
 
   if (dataset === 'Yearly' && dataset1 === 'Euroasia') {
 
-
-    d3.json("spain.json").then(function(data) {
-    
-      for (var i = 0; i < data.length; i++) { 
-        var date = data[i].acq_date;
-        var date_list = date.split("-")
-        year.push(parseInt(date_list[0]))
-      }
-    
-      for (var i=0; i < year.length; i++) {
-        year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
-      }
-    
-      Object.entries(year_list).forEach(([key, value]) => {
-        year_occ.push(key);
-        occury.push(value);
-        })
   
 
-    x = year_occ
-    y = occury
+    x = year_occ_euroasia
+    y = occury_euroasia
 
 
     var update = {
@@ -418,7 +487,7 @@ function getData() {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+
 }
 
 
@@ -428,33 +497,8 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
 
 
 
-  d3.json("spain.json").then(function(data) {
-
-  
-    for (var i = 0; i < data.length; i++) { 
-      var date = data[i].acq_date;
-      var date_list = date.split("-")
-      month.push(parseInt(date_list[1]))
-    }
-
-  
-    for (var i=0; i < month.length; i++) {
-      month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
-    }
-  
-    
-    Object.entries(month_list).forEach(([key, value]) => {
-      month_occ.push(key);
-      occurm.push(value);
-      })
-  
-      console.log(month_list)
-      console.log(month_occ)
-      console.log(occurm)
-
-
-  x = month_occ
-  y = occurm
+  x = month_occ_euroasia
+  y = occurm_euroasia
 
 
 
@@ -487,7 +531,7 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+  
 }
 
 
@@ -496,26 +540,8 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
   if (dataset === 'Yearly' && dataset1 === 'Africa') {
 
 
-    d3.json("algeria.json").then(function(data) {
-    
-      for (var i = 0; i < data.length; i++) { 
-        var date = data[i].acq_date;
-        var date_list = date.split("-")
-        year.push(parseInt(date_list[0]))
-      }
-    
-      for (var i=0; i < year.length; i++) {
-        year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
-      }
-    
-      Object.entries(year_list).forEach(([key, value]) => {
-        year_occ.push(key);
-        occury.push(value);
-        })
-  
-
-    x = year_occ
-    y = occury
+    x = year_occ_africa
+    y = occury_africa
 
 
     var update = {
@@ -544,7 +570,7 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+  
 }
 
 
@@ -553,34 +579,8 @@ if (dataset === 'Monthly' && dataset1 === 'Euroasia') {
 if (dataset === 'Monthly' && dataset1 === 'Africa') {
 
 
-
-  d3.json("algeria.json").then(function(data) {
-
-  
-    for (var i = 0; i < data.length; i++) { 
-      var date = data[i].acq_date;
-      var date_list = date.split("-")
-      month.push(parseInt(date_list[1]))
-    }
-
-  
-    for (var i=0; i < month.length; i++) {
-      month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
-    }
-  
-    
-    Object.entries(month_list).forEach(([key, value]) => {
-      month_occ.push(key);
-      occurm.push(value);
-      })
-  
-      console.log(month_list)
-      console.log(month_occ)
-      console.log(occurm)
-
-
-  x = month_occ
-  y = occurm
+  x = month_occ_africa
+  y = occurm_africa
 
 
 
@@ -613,7 +613,7 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+  
 }
 
 
@@ -623,26 +623,8 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
   if (dataset === 'Yearly' && dataset1 === 'Oceania') {
 
 
-    d3.json("fiji.json").then(function(data) {
-    
-      for (var i = 0; i < data.length; i++) { 
-        var date = data[i].acq_date;
-        var date_list = date.split("-")
-        year.push(parseInt(date_list[0]))
-      }
-    
-      for (var i=0; i < year.length; i++) {
-        year_list[year[i]] = (year_list[year[i]] || 0) +1 ;
-      }
-    
-      Object.entries(year_list).forEach(([key, value]) => {
-        year_occ.push(key);
-        occury.push(value);
-        })
-  
-
-    x = year_occ
-    y = occury
+    x = year_occ_australia
+    y = occury_australia
 
 
     var update = {
@@ -671,7 +653,7 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+  
 }
 
 
@@ -680,34 +662,8 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
 if (dataset === 'Monthly' && dataset1 === 'Oceania') {
 
 
-
-  d3.json("fiji.json").then(function(data) {
-
-  
-    for (var i = 0; i < data.length; i++) { 
-      var date = data[i].acq_date;
-      var date_list = date.split("-")
-      month.push(parseInt(date_list[1]))
-    }
-
-  
-    for (var i=0; i < month.length; i++) {
-      month_list[month[i]] = (month_list[month[i]] || 0) +1 ;
-    }
-  
-    
-    Object.entries(month_list).forEach(([key, value]) => {
-      month_occ.push(key);
-      occurm.push(value);
-      })
-  
-      console.log(month_list)
-      console.log(month_occ)
-      console.log(occurm)
-
-
-  x = month_occ
-  y = occurm
+  x = month_occ_australia
+  y = occurm_australia
 
 
 
@@ -740,11 +696,8 @@ if (dataset === 'Monthly' && dataset1 === 'Oceania') {
     Plotly.restyle("plot", "x", [x]);
     Plotly.restyle("plot", "y", [y]);
     Plotly.relayout("plot", update);
-  })
+  
 }
-
-
-
 
 
 }
