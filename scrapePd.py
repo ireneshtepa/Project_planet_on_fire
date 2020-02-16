@@ -3,13 +3,11 @@ from splinter import Browser
 import requests
 import pandas as pd
 from selenium import webdriver
-# from webdriver_manager.chrome import ChromeDriverManager
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float
 import datetime as dt  
 import pandas as pd
-import config
 
 
 browser = Browser('chrome', headless=True)
@@ -19,7 +17,7 @@ Base = declarative_base()
 todaysDate = str(dt.date.today())
 
 
-connection_string = "postgres:1234@localhost:5432/planetOnFire_db"
+connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 Base.metadata.create_all(engine)
 engine.table_names()
@@ -59,4 +57,3 @@ if ((date_check)!=todaysDate):
 
 else:
     print("table exists")
-
