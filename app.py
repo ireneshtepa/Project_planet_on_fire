@@ -42,6 +42,10 @@ def news():
 def stats():    
    return render_template("stats.html") 
 
+@app.route("/developers")
+def developers():    
+   return render_template("developers.html")
+
 @app.route("/api")
 def myData():
 
@@ -89,7 +93,9 @@ def mongoData():
 
 @app.route("/api3")
 def myTwitterData():
-   twitterData = Twitter_LocationSearchTweets.scrapeTwitter()
+   twitterData={} 
+   
+   twitterData["url"] = Twitter_LocationSearchTweets.scrapeTwitter()
 
    return twitterData
 
