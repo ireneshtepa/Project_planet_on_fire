@@ -5,9 +5,11 @@
   
   .developers-info{
       margin: 100px;
-      width: 5000px;
+      width: auto;
       font-family: Verdana;
       color: antiquewhite;
+      vertical-align: middle;
+      text-align: center;
       /* border: 1px dashed grey; */
   }
 
