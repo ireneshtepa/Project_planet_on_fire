@@ -3,14 +3,45 @@
     position: absolute;
   } */
   
-  .developers-info{
+  .developers-info {
       margin: 100px;
       width: auto;
       font-family: Verdana;
       color: antiquewhite;
-      vertical-align: middle;
-      text-align: center;
+      vertical-align: left;
+      text-align: left;
+      align-items: left;
       /* border: 1px dashed grey; */
+  }
+
+  .developers-images {
+    height: 300px;
+    width: 300px;
+  }
+
+  div.card {
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(221, 207, 207, 0.2), 0 6px 20px 0 rgba(221, 207, 207, 0.2);
+    text-align: center;
+    padding: 75px;
+  }
+  
+
+  header {
+    padding-bottom: 20px;
+  }
+
+  .linkedin-link {
+    color: antiquewhite;
+    background: #e25822;
+    display: block;
+    float: center;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    border-radius: 7px;
+    margin: 4px
   }
 
   .nav-planet {
@@ -30,6 +61,7 @@
   /* Navigation bar */
   a {
     text-decoration: none;
+    color: antiquewhite;
   }
   
   nav {
