@@ -2,15 +2,16 @@
  url = "http://127.0.0.1:5000/api"
  fire_cordinates = d3.json(url).then(function(data){
   var coordinates = [];
+  var heatMap = [];
   var brightness = [];
-  console.log(data);
    for (i = 0; i < data.length; i++) {
     var loc_list = [data[i].latitude, data[i].longitude];
     coordinates.push(loc_list)
-    var fire_temp = data[i].brightness;
-    brightness.push(fire_temp)
+    heatMap_data=[data[i].latitude, data[i].longitude, data[i].brightness];
+    heatMap.push(heatMap_data);
+    brightness.push(data[i].brightness)
   };
-console.log(brightness)
+// console.log(heatMap)
   fireMarkers = [];
   for (var i = 0; i < coordinates.length; i++) {
     // Setting the marker radius for the state by passing population into the markerSize function
@@ -21,9 +22,11 @@ console.log(brightness)
         color: "red",
         fillColor: "red",
         radius: 10000
-      }).off('hover')
+      })
     )};
 
+var minBright = Math.min(...brightness);
+var maxBright = Math.max(...brightness);
 
 // Define variables for base layers
 var satellite = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -40,9 +43,13 @@ var darkmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?
   accessToken: API_KEY
 });
 
-// var fireMarkers = [];
 // Create two separate layer group
-var fires = L.layerGroup(fireMarkers);
+// var fires = L.layerGroup(fireMarkers);
+var heat = L.heatLayer(heatMap, {
+  radius: 10,
+  blur: 12,
+  gradient: {0.1: 'blue', 0.3: 'lime', 0.5: "yellow",  0.9: 'red', 1: "#8D021F"}
+});  
 
 // Create a baseMaps object
 var baseMaps = {
@@ -52,17 +59,16 @@ var baseMaps = {
 
 // Create an overlay object
 var overlayMaps = {
-  "Fires": fires
+  "Heat": heat
+  // ,"Fires": fires
 };
-
-  
 
 
 // Define a map object
 var myMap = L.map("map", {
   center: [17.991615, 17.656456],
   zoom: 3,
-  layers: [darkmap, fires],
+  layers: [darkmap, heat],
   zoomControl: false
 });
 
@@ -73,8 +79,9 @@ var myMap = L.map("map", {
   // condition for dropdown menue
 var continents = [
   {"Name": "Africa", "Location": [7.026601, 17.517169], "Zoom": 5},
+  {"Name": "Asia", "Location": [24.704768, 92.144528], "Zoom": 5},
   {"Name": "Australia", "Location": [-25.985928, 133.881768], "Zoom": 5},
-  {"Name": "Eurasia", "Location": [24.704768, 92.144528], "Zoom": 5},
+  {"Name": "Europe", "Location": [46.860477, 17.705424], "Zoom": 5},
   {"Name": "North America", "Location": [33.584754, -91.103957], "Zoom": 5},
   {"Name": "South America", "Location": [3.376254, -61.164163], "Zoom": 5}
 ];
