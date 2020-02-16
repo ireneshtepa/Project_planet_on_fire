@@ -12,6 +12,14 @@
   float: left;
 }
 
+/* tweeter page */
+.twitter-feed {
+position: absolute;
+margin-top: 50px;
+margin-left: 100px;
+}
+
+
 /* refresh button */
 .refresh {
   background-color: #0f9200;

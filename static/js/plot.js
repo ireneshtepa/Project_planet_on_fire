@@ -11,11 +11,11 @@ var occurm = [];
 
 function init() {
 
-
+url = "http://127.0.0.1:5000/api2"
 
 //###################getting data from JSON###########################
 
-  d3.json("algeria.json").then(function(data) {
+  d3.json(url).then(function(data) {
     
     for (var i = 0; i < data.length; i++) { 
       var date = data[i].acq_date;
