@@ -17,7 +17,7 @@ Base = declarative_base()
 todaysDate = str(dt.date.today())
 
 
-connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
+connection_string = "postgres:1234@localhost:5432/planetOnFire_db"
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 Base.metadata.create_all(engine)
 engine.table_names()

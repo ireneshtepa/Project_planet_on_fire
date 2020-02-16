@@ -9,19 +9,4 @@ var continents = [
 ];
 
 
-    // d3.selectAll(".dropdown-select").on("change", changeZoom);
-
-    // function changeZoom() {
-    //   var input = d3.select(".dropdown-select").property("value");
-    //   console.log(input);
-    //   for (i=0; i<continents.length; i++){
-    //      if (continents[i].Name == input) {
-    //       var newLocation = continents[i].Location;
-    //       var newZoom = continents[i].Zoom;
-    //       console.log(newLocation);
-    //       console.log(newZoom);     
-    //       myMap.setView(newLocation, newZoom)
-    //     }
-    //   } 
-    //   };
 
