@@ -11,7 +11,7 @@ import psycopg2.extras
 import json as simplejsonpythi
 import datetime as dt
 from bson import json_util
-# import Twitter_LocationSearchTweets
+import Twitter_LocationSearchTweets
 
 
 
@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 mongo = PyMongo(app, uri="mongodb://localhost:27017/fire")
 
-connection_string = 'postgres:1234@localhost:5432/planetOnFire_db'
+connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
 mydata = pd.read_sql_query('select * from cleaned_df', con=engine)
@@ -67,7 +67,7 @@ def mongoData():
    mongoMydata = (mongo.db.northamerica)
 
    
-   for x in mongoMydata.find({}).limit(200):
+   for x in mongoMydata.find({}).limit(100):
       x.pop('_id')
       x.pop('acq_time')
       x.pop('bright_t31')
@@ -96,8 +96,15 @@ def mongoData():
 #    twitterData={} 
    
 #    twitterData["url"] = Twitter_LocationSearchTweets.scrapeTwitter()
-
+#    print(twitterData)
 #    return twitterData
+
+#    dates =[]
+#    #mongoDict = {} 
+#    mongoMydata = (mongo.db.n)
+
+   
+#    for x in mongoMydata.find({}).limit(10000):
 
 print ("Data loading complate...")
 if __name__ == "__main__":
