@@ -1,1 +1,0 @@
-web: gunicorn Planet-on-fire-app.app:app
