@@ -21,7 +21,8 @@ app = Flask(__name__)
 
 mongo = PyMongo(app, uri="mongodb://localhost:27017/fire")
 
-connection_string = 'postgres:1234@localhost:5432/planetOnFire_db'
+# connection_string = 'postgres:1234@localhost:5432/planetOnFire_db'
+connection_string = 'postgres://zmohrmrfwwjvsc:89d4d39abb538481ac6e2249abb0cdfb56f86721e7aff9b7b051ffecd34d9a0e@ec2-34-235-108-68.compute-1.amazonaws.com:5432/dbjlmcitp23998'
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
 mydata = pd.read_sql_query('select * from cleaned_df', con=engine)
