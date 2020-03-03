@@ -10,4 +10,4 @@ Data sources:
  - NASA Earth Images API
  
  Technologies used:
- Flask app, JavaScript, Python, SQL, Postgress, noSQL, Mapbox, Leaflet, Plotly, html, CSS, Bootstrap, 
+ Flask app, JavaScript, Python, SQL, Postgress, noSQL, Mapbox, Leaflet, Plotly, html, CSS, Bootstrap
