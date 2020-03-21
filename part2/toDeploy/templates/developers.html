@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Globar Fire Data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/developers.css">
+</head>
+<body class="dark-page">
+
+<!-- Planet on fire icon -->
+<a href="/"><img class="nav-planet" src="../static/images/planet-fire.png"></a>
+
+<!-- Navigation -->
+<!-- <nav role="navigation">
+  <ul>
+    <li id="button-style"><a href="news.html">Global Fire News</a></li>
+    <li id="button-style"><a href="stats.html">Stats</a></li>
+  </ul>
+</nav> -->
+
+<nav role="navigation">
+  <ul>
+    <!-- <li id="button-style"><a href="#" aria-haspopup="true">Choose Continent ▼</a>
+      <ul class="dropdown" aria-label="submenu">
+        <li id="menu-item"><a href="#">Africa</a></li>
+        <li id="menu-item"><a href="#">Australia</a></li>
+        <li id="menu-item"><a href="#">Eurasia</a></li>
+        <li id="menu-item"><a href="#">North America</a></li>
+        <li id="menu-item"><a href="#">South America</a></li>
+      </ul> -->
+    </li>
+    <li id="button-style"><a href="/news">Global Fire News</a></li>
+    <li id="button-style"><a href="/stats">Stats</a></li>
+    <li id="button-style"><a href="/developers">Developers</a></li>
+  </ul>
+</nav>
+
+<div class="developers-info">
+  <header class="bg-primary text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">Meet the Team</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+  <div class="card-deck">
+    <div class="row">
+      <!-- Team Member 1: Yinka Adesanmi -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card-block">
+        <div class="card border-0 shadow">
+          <img src="../static/images/yinka.jpeg" class="card-img-top developers-images" alt="Image of Developer">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Yinka Adesanmi</h5>
+            <a href="https://www.linkedin.com/in/aadeyinka/" class="linkedin-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 2: Francisco Tang Bustillos -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card-block">
+        <div class="card border-0 shadow">
+          <img src="../static/images/fran.jpeg" class="card-img-top developers-images" alt="Image of Developer">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Francisco Tang Bustillos</h5>
+            <a href="https://www.linkedin.com/in/franciscotang/" class="linkedin-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="row">
+      <!-- Team Member 3: Yatish Mullaji -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card-block">
+        <div class="card border-0 shadow">
+          <img src="../static/images/yatish.jpeg" class="card-img-top developers-images" alt="Image of Developer">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Yatish Mullaji</h5>
+            <a href="https://www.linkedin.com/in/yatish-mullaji-095b5b62/" class="linkedin-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 4: Yashwinie Shivanand -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card-block">
+        <div class="card border-0 shadow">
+          <img src="../static/images/yash.jpeg" class="card-img-top developers-images" alt="Image of Developer">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Yashwinie Shivanand</h5>
+            <a href="https://www.linkedin.com/in/yashwinie/" class="linkedin-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <!-- Team Member 5: Irene Shtepa -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card-block">
+          <div class="card border-0 shadow">
+            <img src="../static/images/irene.jpeg" class="card-img-top developers-images" alt="Image of Developer">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Irene Shtepa</h5>
+              <a href="https://www.linkedin.com/in/ireneshtepa/" class="linkedin-link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <!-- /.row -->
+  
+  </div>
+
+  <!-- API key for Mapbox -->
+<script type="text/javascript" src="../static/js/config.js"></script>
+  <!-- JS -->
+<script type="text/javascript" src="../static/js/logic.js"></script>
+</body>
+</html>
