@@ -22,11 +22,14 @@ application = app = Flask(__name__)
 
 
 
-# connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
+connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
+engine = create_engine(f'postgresql+psycopg2://{connection_string}')
+
+# connection_string = "mfvfrkdrdamxmk:a70fc94c64db38058d7aa946f6bcdd82e4616214e4604c6bd902fd5076eac9e4@ec2-52-207-93-32.compute-1.amazonaws.com:5432/dc6vdhtfchef8k"
 # engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
-connection_string = 'root:12345678@mydb.cpzsszr6n1nw.us-east-2.rds.amazonaws.com:5432/planetOnFire_db'
-engine = create_engine(f'postgresql+psycopg2://{connection_string}')
+# connection_string = 'root:12345678@mydb.cpzsszr6n1nw.us-east-2.rds.amazonaws.com:5432/planetOnFire_db'
+# engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
 
 mydata = pd.read_sql_query('select * from cleaned_df', con=engine)
@@ -64,40 +67,36 @@ def refreshData():
 
    return render_template("index.html")
 
-@app.route("/api2")
-def mongoData():
-   #mongo = PyMongo(app, uri="mongodb://localhost:27017/fire")
-   #mongoDict = {} 
-   #mongoMydata = (mongo.db.northamerica)
-   mongo = PyMongo(app,uri="mongodb+srv://Yatish:1234@cluster0-4l19n.mongodb.net/HistoricData?retryWrites=true&w=majority")
-   mongoMydata = (mongo.db.northamerica)
-   
-   dates =[]
+@app.route("/api/africa_historic_data")
+def historic_data_africa_2015():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("Africa")
 
-   
-   for x in mongoMydata.find({}).limit(100):
-      x.pop('_id')
-      x.pop('acq_time')
-      x.pop('bright_t31')
-      x.pop('brightness')
-      x.pop('confidence')
-      x.pop('daynight')
-      #x.pop('D')
-      x.pop('frp')
-      x.pop('instrument')
-      x.pop('latitude')
-      x.pop('longitude')
-      x.pop('satellite')
-      x.pop('scan')
-      x.pop('track')
-      x.pop('type')
-      x.pop('version')
+@app.route("/api/asia_historic_data")
+def historic_data_au_2016():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("Asia")
 
-      dates.append(x)
+@app.route("/api/australia_historic_data")
+def historic_data_au_2017():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("Australia")
 
-      mongoData = json.dumps((dates), sort_keys=True)
-   #print(mongoData)
-   return mongoData 
+@app.route("/api/europe_historic_data")
+def historic_data_au_2018():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("Europe")
+
+@app.route("/api/north_america_historic_data")
+def historic_data_au_2019():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("North America")
+
+@app.route("/api/south_america_historic_data")
+def historic_data_au_2020():
+   import Historic_data_au
+   return Historic_data_au.mongoData_historic("South America")
+
 
 @app.route("/api3")
 def myTwitterData():

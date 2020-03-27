@@ -5,7 +5,6 @@ import pandas as pd
 #from selenium import webdriver
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine
 from sqlalchemy_utils import create_database, database_exists, drop_database
 from sqlalchemy import Column, Integer, String, Float
 import datetime as dt  
@@ -16,11 +15,17 @@ browser = Browser('chrome', headless=True)
 
 todaysDate = str(dt.date.today())
 Base = declarative_base()
-#connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
-#engine = create_engine(f'postgresql+psycopg2://{connection_string}')
-
-connection_string = 'root:12345678@mydb.cpzsszr6n1nw.us-east-2.rds.amazonaws.com:5432/planetOnFire_db'
+connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
+                                                
+# connection_string = "mfvfrkdrdamxmk:a70fc94c64db38058d7aa946f6bcdd82e4616214e4604c6bd902fd5076eac9e4@ec2-52-207-93-32.compute-1.amazonaws.com:5432/dc6vdhtfchef8k"
+# engine = create_engine(f'postgresql+psycopg2://{connection_string}', connect_args={'sslmode':'require'},echo=True)
+
+# connection_string = 'root:12345678@mydb.cpzsszr6n1nw.us-east-2.rds.amazonaws.com:5432/planetOnFire_db'
+# engine = create_engine(f'postgresql+psycopg2://{connection_string}')
+
+#connection_string = "prmpgujo:cSBQxTa1lkKY0hsb4c1OGgAZOqIX6bc4@drona.db.elephantsql.com:5432/prmpgujo"
+#engine = create_engine(f'postgresql+psycopg2:// {connection_string}')
 
 
 if database_exists(engine.url):
