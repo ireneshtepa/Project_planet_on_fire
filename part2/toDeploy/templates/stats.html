@@ -36,13 +36,31 @@
         <option value="North America">North America</option>
         <option value="South America">South America</option>
       </select> -->
-      <select class="dropdown-select" > 
+
+
+      <!--<select class="dropdown-select" > 
         <option value="none" >--Choose Country--</option>
         <option value="Algeria" >Algeria</option>
         <option value="Belize">Belize</option>
         <option value="Ecuador">Ecuador</option>
         <option value="Fiji">Fiji</option>
         <option value="Spain">Spain</option>
+      </select>-->
+
+      <select id="selDataset1" class="dropdown-select" >
+        <option value="none" >--Choose Country--</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
+        <option value="Europe">Europe</option>
+        <option value="North-America">North America</option>
+        <option value="South-America">South America</option>
+      </select>
+
+      <!-- plot navigation -->
+      <select id="selDataset" class="dropdown-select">
+        <option value="Yearly">Yearly</option>
+        <option value="Monthly">Monthly</option>
       </select>
 
     <li id="button-style"><a href="/news">Global Fire News</a></li>
@@ -54,11 +72,8 @@
 
 
 
-<!-- plot navigation -->
-<select id="selDataset" class="custom-select">
-  <option value="Yearly">Yearly</option>
-  <option value="Monthly">Monthly</option>
-</select>
+
+
 
 <!-- graph plot -->
 <div id="plot" class="chart"></div>
