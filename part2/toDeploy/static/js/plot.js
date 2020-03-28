@@ -186,7 +186,8 @@ function init() {
     y: africa_year,
     type: "line",
     //mode: 'markers',
-    background: 'red',
+    //fill: 'tozeroy',
+    //type: 'scatter',
     line: {color: 'rgb(219, 64, 82)', width: 3},
     marker: {color: 'rgb(219, 64, 82)',size: 12}
   };
@@ -597,7 +598,7 @@ function getData() {
 
       var update = {
         title: "North America: Monthly occurence of fires",
-        xaxis: { title: "Year",
+        xaxis: { title: "Month",
                 //range: [2015, 2019],
                 showgrid: true,
                 gridwidth: 2,
@@ -682,7 +683,7 @@ function getData() {
 
     var update = {
       title: "South America: Monthly occurence of fires",
-      xaxis: { title: "Year",
+      xaxis: { title: "Month",
               //range: [2015, 2019],
               showgrid: true,
               gridwidth: 2,
@@ -765,7 +766,7 @@ if (dataset === 'Monthly' && dataset1 === 'Europe') {
 
   var update = {
     title: "Europe: Monthly occurence of fires",
-    xaxis: { title: "Year",
+    xaxis: { title: "Month",
             //range: [2015, 2019],
             showgrid: true,
             gridwidth: 2,
@@ -850,7 +851,7 @@ y = asia_month
 
 var update = {
   title: "Asia: Monthly occurence of fires",
-  xaxis: { title: "Year",
+  xaxis: { title: "Month",
           //range: [2015, 2019],
           showgrid: true,
           gridwidth: 2,
@@ -935,7 +936,7 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
 
   var update = {
     title: "Africa: Monthly occurence of fires",
-    xaxis: { title: "Year",
+    xaxis: { title: "Month",
             //range: [2015, 2019],
             showgrid: true,
             gridwidth: 2,
@@ -1018,7 +1019,7 @@ if (dataset === 'Monthly' && dataset1 === 'Australia') {
 
   var update = {
     title: "Australia: Monthly occurence of fires",
-    xaxis: { title: "Year",
+    xaxis: { title: "Month",
             //range: [2015, 2019],
             showgrid: true,
             gridwidth: 2,

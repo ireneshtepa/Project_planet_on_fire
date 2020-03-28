@@ -21,8 +21,8 @@ from bson import json_util
 application = app = Flask(__name__)
 
 
-
-connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
+connection_string = 'postgres:1234@localhost:5432/planetOnFire_db'
+# connection_string = 'postgres:Yatish28$@localhost:5432/planetOnFire_db'
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
 
 # connection_string = "mfvfrkdrdamxmk:a70fc94c64db38058d7aa946f6bcdd82e4616214e4604c6bd902fd5076eac9e4@ec2-52-207-93-32.compute-1.amazonaws.com:5432/dc6vdhtfchef8k"
@@ -53,6 +53,14 @@ def stats():
 @app.route("/developers")
 def developers():    
    return render_template("developers.html")
+
+@app.route("/data")
+def data():    
+   return render_template("data.html")
+
+@app.route("/predictions")
+def predictions():    
+   return render_template("predictions.html")
 
 @app.route("/api")
 def myData():

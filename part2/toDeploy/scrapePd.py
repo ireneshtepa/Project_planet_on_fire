@@ -15,7 +15,8 @@ browser = Browser('chrome', headless=True)
 
 todaysDate = str(dt.date.today())
 Base = declarative_base()
-connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
+connection_string = "postgres:1234@localhost:5432/planetOnFire_db"
+# connection_string = "postgres:Yatish28$@localhost:5432/planetOnFire_db"
 engine = create_engine(f'postgresql+psycopg2://{connection_string}')
                                                 
 # connection_string = "mfvfrkdrdamxmk:a70fc94c64db38058d7aa946f6bcdd82e4616214e4604c6bd902fd5076eac9e4@ec2-52-207-93-32.compute-1.amazonaws.com:5432/dc6vdhtfchef8k"
