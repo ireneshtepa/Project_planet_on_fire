@@ -1,0 +1,12 @@
+
+.custom-select {
+  position: relative;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  background-color: rgb(8, 156, 224);
+  color: #ffffff;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
