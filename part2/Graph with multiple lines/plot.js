@@ -607,9 +607,10 @@ function getData() {
   console.log(dataset);
 
   
-  var x = [];
-  var y = [];
-  var update = [];
+  //var x = [];
+  //var y = [];
+  //var data = [trace]
+  //var update = [];
 
 //########Year option with North America############# 
 
@@ -617,9 +618,20 @@ function getData() {
 
       
 
-      x = years
-      y = north_america_year
+      //x = years
+      //y = north_america_year
 
+      var trace = {
+        x: years,
+        y: north_america_year,
+        type: "line",
+        line: {color: 'rgb(255, 0, 153)', width: 3},
+        marker: {color: 'rgb(255, 0, 153)',size: 12},
+        name: 'North America'
+      };
+
+
+      var data = [trace]
 
       var update = {
         title: "North America: Yearly occurence of fires",
@@ -644,9 +656,12 @@ function getData() {
         },   
       };
       
-      Plotly.restyle("plot", "x", [x]);
-      Plotly.restyle("plot", "y", [y]);
-      Plotly.relayout("plot", update);
+      //Plotly.restyle("plot", "x", [x]);
+      //Plotly.restyle("plot", "y", [y]);
+
+      //Plotly.relayout("plot", data);
+      //Plotly.relayout("plot", update);
+      Plotly.newPlot("plot", data, update);
 
   }
 
@@ -657,8 +672,19 @@ function getData() {
 
 
 
-      x = months
-      y = north_america_month
+      //x = months
+      //y = north_america_month
+
+      var trace = {
+        x: months,
+        y: north_america_month,
+        type: "line",
+        line: {color: 'rgb(255, 0, 153)', width: 3},
+        marker: {color: 'rgb(255, 0, 153)',size: 12},
+        name: 'North America'
+      };
+
+      var data = [trace]
 
       var update = {
         title: "North America: Monthly occurence of fires",
@@ -686,9 +712,11 @@ function getData() {
         },   
       }; 
       
-      Plotly.restyle("plot", "x", [x]);
-      Plotly.restyle("plot", "y", [y]);
-      Plotly.relayout("plot", update);
+      //Plotly.restyle("plot", "x", [x]);
+      //Plotly.restyle("plot", "y", [y]);
+      //Plotly.relayout("plot", update);
+
+      Plotly.newPlot("plot", data, update);
   
   }
 
@@ -700,9 +728,20 @@ function getData() {
 
     
 
-      x = years
-      y = south_america_year
+      //x = years
+      //y = south_america_year
 
+      var trace = {
+        x: years,
+        y: south_america_year,
+        type: "line",
+        line: {color: 'rgb(255, 0, 0)', width: 3},
+        marker: {color: 'rgb(255, 0, 0)',size: 12},
+        name: "South America"
+      };
+
+
+      var data = [trace] 
 
       var update = {
         title: "South America: Yearly occurence of fires",
@@ -727,9 +766,10 @@ function getData() {
         },   
       }; 
       
-      Plotly.restyle("plot", "x", [x]);
-      Plotly.restyle("plot", "y", [y]);
-      Plotly.relayout("plot", update);
+      //Plotly.restyle("plot", "x", [x]);
+      //Plotly.restyle("plot", "y", [y]);
+      //Plotly.relayout("plot", update)
+      Plotly.newPlot("plot", data, update);
   
   }
 
@@ -740,10 +780,20 @@ function getData() {
 
 
 
-    x = months
-    y = south_america_month
+    //x = months
+    //y = south_america_month
 
-  
+    var trace = {
+      x: months,
+      y: south_america_month,
+      type: "line",
+      line: {color: 'rgb(255, 0, 0)', width: 3},
+      marker: {color: 'rgb(255, 0, 0)',size: 12},
+      name: "South America"
+    };
+
+
+    var data = [trace] 
 
     var update = {
       title: "South America: Monthly occurence of fires",
@@ -771,9 +821,10 @@ function getData() {
             },   
       };
       
-      Plotly.restyle("plot", "x", [x]);
-      Plotly.restyle("plot", "y", [y]);
-      Plotly.relayout("plot", update);
+      //Plotly.restyle("plot", "x", [x]);
+      //Plotly.restyle("plot", "y", [y]);
+      //Plotly.relayout("plot", update);
+      Plotly.newPlot("plot", data, update);
   
   }
 
@@ -783,8 +834,19 @@ function getData() {
 
   
 
-    x = years
-    y = europe_year
+    //x = years
+    //y = europe_year
+
+    var trace = {
+      x: years,
+      y: europe_year,
+      type: "line",
+      line: {color: 'rgb(38, 255, 0)', width: 3},
+      marker: {color: 'rgb(38, 255, 0)',size: 12},
+      name: "Europe"
+    };
+
+    var data = [trace] 
 
 
     var update = {
@@ -810,9 +872,11 @@ function getData() {
       },   
     }; 
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+
+    Plotly.newPlot("plot", data, update);
 
 }
 
@@ -823,8 +887,19 @@ if (dataset === 'Monthly' && dataset1 === 'Europe') {
 
 
 
-  x = months
-  y = europe_month
+  //x = months
+  //y = europe_month
+
+  var trace = {
+      x: months,
+      y: europe_month,
+      type: "line",
+      line: {color: 'rgb(38, 255, 0)', width: 3},
+      marker: {color: 'rgb(38, 255, 0)',size: 12},
+      name: "Europe"
+    };
+
+    var data = [trace] 
 
 
 
@@ -854,9 +929,11 @@ if (dataset === 'Monthly' && dataset1 === 'Europe') {
           },   
     };
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+
+    Plotly.newPlot("plot", data, update);
   
 }
 
@@ -868,8 +945,19 @@ if (dataset === 'Yearly' && dataset1 === 'Asia') {
 
   
 
-  x = years
-  y = asia_year
+  //x = years
+  //y = asia_year
+
+  var trace = {
+    x: years,
+    y: asia_year,
+    type: "line",
+    line: {color: 'rgb(255, 162, 0)', width: 3},
+    marker: {color: 'rgb(255, 162, 0)',size: 12},
+    name: 'Asia'
+  };
+
+  var data = [trace]
 
 
   var update = {
@@ -895,9 +983,10 @@ if (dataset === 'Yearly' && dataset1 === 'Asia') {
     },   
   }; 
   
-  Plotly.restyle("plot", "x", [x]);
-  Plotly.restyle("plot", "y", [y]);
-  Plotly.relayout("plot", update);
+  //Plotly.restyle("plot", "x", [x]);
+  //Plotly.restyle("plot", "y", [y]);
+  //Plotly.relayout("plot", update);
+  Plotly.newPlot("plot", data, update);
 
 }
 
@@ -908,10 +997,19 @@ if (dataset === 'Monthly' && dataset1 === 'Asia') {
 
 
 
-x = months
-y = asia_month
+//x = months
+//y = asia_month
 
+var trace = {
+  x: months,
+  y: asia_month,
+  type: "line",
+  line: {color: 'rgb(255, 162, 0)', width: 3},
+  marker: {color: 'rgb(255, 162, 0)',size: 12},
+  name: 'Asia'
+};
 
+var data = [trace]
 
 var update = {
   title: "Asia: Monthly occurence of fires",
@@ -939,9 +1037,10 @@ var update = {
         },   
   };
   
-  Plotly.restyle("plot", "x", [x]);
-  Plotly.restyle("plot", "y", [y]);
-  Plotly.relayout("plot", update);
+  //Plotly.restyle("plot", "x", [x]);
+  //Plotly.restyle("plot", "y", [y]);
+  //Plotly.relayout("plot", update);
+  Plotly.newPlot("plot", data, update);
 
 }
 
@@ -954,8 +1053,19 @@ var update = {
   if (dataset === 'Yearly' && dataset1 === 'Africa') {
 
 
-    x = years
-    y = africa_year
+    //x = years
+    //y = africa_year
+
+    var trace = {
+      x: years,
+      y: africa_year,
+      type: "line",
+      line: {color: 'rgb(111, 0, 255)', width: 3},
+      marker: {color: 'rgb(111, 0, 255)',size: 12},
+      name: 'Africa'
+    };
+
+    var data = [trace]
 
 
     var update = {
@@ -981,11 +1091,14 @@ var update = {
       },   
     }; 
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+
+    Plotly.newPlot("plot", data, update);
   
 }
+
 
 
 //##########Month option with Africa###################  
@@ -993,8 +1106,19 @@ var update = {
 if (dataset === 'Monthly' && dataset1 === 'Africa') {
 
 
-  x = months
-  y = africa_month
+  //x = months
+  //y = africa_month
+
+  var trace = {
+      x: months,
+      y: africa_month,
+      type: "line",
+      line: {color: 'rgb(111, 0, 255)', width: 3},
+      marker: {color: 'rgb(111, 0, 255)',size: 12},
+      name: 'Africa'
+    };
+
+    var data = [trace]
 
 
 
@@ -1024,9 +1148,11 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
           },   
     };
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+
+    Plotly.newPlot("plot", data, update);
   
 }
 
@@ -1037,9 +1163,20 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
   if (dataset === 'Yearly' && dataset1 === 'Australia') {
 
 
-    x = years
-    y = australia_year
+    //x = years
+    //y = australia_year
 
+    var trace = {
+      x: years,
+      y: australia_year,
+      type: "line",
+      line: {color: 'rgb(242, 255, 0)', width: 3},
+      marker: {color: 'rgb(242, 255, 0)',size: 12},
+      name: "Australia"
+    };
+
+
+    var data = [trace]
 
     var update = {
       title: "Australia: Yearly occurence of fires",
@@ -1064,9 +1201,11 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
       },   
     }; 
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+
+    Plotly.newPlot("plot", data, update);
   
 }
 
@@ -1076,9 +1215,21 @@ if (dataset === 'Monthly' && dataset1 === 'Africa') {
 if (dataset === 'Monthly' && dataset1 === 'Australia') {
 
 
-  x = months
-  y = australia_month
+  //x = months
+  //y = australia_month
 
+
+  var trace = {
+    x: months,
+    y: australia_month,
+    type: "line",
+    line: {color: 'rgb(242, 255, 0)', width: 3},
+    marker: {color: 'rgb(242, 255, 0)',size: 12},
+    name: "Australia"
+  };
+
+
+  var data = [trace]
 
 
   var update = {
@@ -1107,9 +1258,10 @@ if (dataset === 'Monthly' && dataset1 === 'Australia') {
           },   
     };
     
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-    Plotly.relayout("plot", update);
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+    //Plotly.relayout("plot", update);
+    Plotly.newPlot("plot", data, update);
   
 }
 
