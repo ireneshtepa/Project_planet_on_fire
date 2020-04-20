@@ -1,1 +1,0 @@
-FLASK_APP=Planet-on-fire-app/app.py flask run
