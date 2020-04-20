@@ -1262,8 +1262,213 @@ if (dataset === 'Monthly' && dataset1 === 'Australia') {
     //Plotly.restyle("plot", "y", [y]);
     //Plotly.relayout("plot", update);
     Plotly.newPlot("plot", data, update);
+
   
 }
+
+//###################################Year option with All continents######################################################
+
+if (dataset === 'Yearly' && dataset1 === 'All') {
+
+      
+
+  //x = years
+  //y = north_america_year
+
+  var trace1 = {
+    x: years,
+    y: africa_year,
+    type: "line",
+    line: {color: 'rgb(111, 0, 255)', width: 3},
+    marker: {color: 'rgb(111, 0, 255)',size: 12},
+    name: 'Africa'
+  };
+  
+  var trace2 = {
+    x: years,
+    y: asia_year,
+    type: "line",
+    line: {color: 'rgb(255, 162, 0)', width: 3},
+    marker: {color: 'rgb(255, 162, 0)',size: 12},
+    name: 'Asia'
+  };
+  
+  
+  var trace3 = {
+    x: years,
+    y: australia_year,
+    type: "line",
+    line: {color: 'rgb(242, 255, 0)', width: 3},
+    marker: {color: 'rgb(242, 255, 0)',size: 12},
+    name: "Australia"
+  };
+  
+  
+  var trace4 = {
+    x: years,
+    y: europe_year,
+    type: "line",
+    line: {color: 'rgb(38, 255, 0)', width: 3},
+    marker: {color: 'rgb(38, 255, 0)',size: 12},
+    name: "Europe"
+  };
+  
+  var trace5 = {
+    x: years,
+    y: north_america_year,
+    type: "line",
+    line: {color: 'rgb(255, 0, 153)', width: 3},
+    marker: {color: 'rgb(255, 0, 153)',size: 12},
+    name: 'North America'
+  };
+  
+  
+  var trace6 = {
+    x: years,
+    y: south_america_year,
+    type: "line",
+    line: {color: 'rgb(255, 0, 0)', width: 3},
+    marker: {color: 'rgb(255, 0, 0)',size: 12},
+    name: "South America"
+  };
+  
+  
+  
+  var data = [trace1, trace2, trace3, trace4, trace5, trace6]
+  
+  var update = {
+    title: "World: Yearly occurence of fires",
+    xaxis: { title: "Year",
+            //range: [2015, 2019],
+            showgrid: true,
+            gridwidth: 2,
+            autotick: false,
+            ticks: 'outside',
+            showline: true,
+            //plot_bgcolor: 'rgba(255, 0, 0)'
+            colorway : ['#f3cec9']
+  
+  },
+    yaxis: { title: "# of fires" ,
+            //rangemode:'tozero',
+            autorange: true,
+            showgrid: true,
+            gridwidth: 2,
+            ticks: 'outside',
+            showline: true,
+  }
+  //Plotly.restyle("plot", "x", [x]);
+  //Plotly.restyle("plot", "y", [y]);
+}
+  //Plotly.relayout("plot", data);
+  //Plotly.relayout("plot", update);
+  Plotly.newPlot("plot", data, update);
+
+}
+
+  
+//###################################Month option with All continents######################################################
+
+  //x = months
+  //y = north_america_month
+  if (dataset === 'Monthly' && dataset1 === 'All') {
+
+      
+
+    //x = years
+    //y = north_america_year
+  
+    var trace1 = {
+      x: months,
+      y: africa_month,
+      type: "line",
+      line: {color: 'rgb(111, 0, 255)', width: 3},
+      marker: {color: 'rgb(111, 0, 255)',size: 12},
+      name: 'Africa'
+    };
+    
+    var trace2 = {
+      x: months,
+      y: asia_month,
+      type: "line",
+      line: {color: 'rgb(255, 162, 0)', width: 3},
+      marker: {color: 'rgb(255, 162, 0)',size: 12},
+      name: 'Asia'
+    };
+    
+    
+    var trace3 = {
+      x: months,
+      y: australia_month,
+      type: "line",
+      line: {color: 'rgb(242, 255, 0)', width: 3},
+      marker: {color: 'rgb(242, 255, 0)',size: 12},
+      name: "Australia"
+    };
+    
+    
+    var trace4 = {
+      x: months,
+      y: europe_month,
+      type: "line",
+      line: {color: 'rgb(38, 255, 0)', width: 3},
+      marker: {color: 'rgb(38, 255, 0)',size: 12},
+      name: "Europe"
+    };
+    
+    var trace5 = {
+      x: months,
+      y: north_america_month,
+      type: "line",
+      line: {color: 'rgb(255, 0, 153)', width: 3},
+      marker: {color: 'rgb(255, 0, 153)',size: 12},
+      name: 'North America'
+    };
+    
+    
+    var trace6 = {
+      x: months,
+      y: south_america_month,
+      type: "line",
+      line: {color: 'rgb(255, 0, 0)', width: 3},
+      marker: {color: 'rgb(255, 0, 0)',size: 12},
+      name: "South America"
+    };
+    
+    
+    
+    var data = [trace1, trace2, trace3, trace4, trace5, trace6]
+    
+    var update = {
+      title: "World: Monthly occurence of fires",
+      xaxis: { title: "Month",
+              //range: [2015, 2019],
+              showgrid: true,
+              gridwidth: 2,
+              autotick: false,
+              ticks: 'outside',
+              showline: true,
+              //plot_bgcolor: 'rgba(255, 0, 0)'
+              colorway : ['#f3cec9']
+    
+    },
+      yaxis: { title: "# of fires" ,
+              //rangemode:'tozero',
+              autorange: true,
+              showgrid: true,
+              gridwidth: 2,
+              ticks: 'outside',
+              showline: true,
+    }
+    //Plotly.restyle("plot", "x", [x]);
+    //Plotly.restyle("plot", "y", [y]);
+  }
+    //Plotly.relayout("plot", data);
+    //Plotly.relayout("plot", update);
+    Plotly.newPlot("plot", data, update);
+  
+  }
+
 
 }
 }
