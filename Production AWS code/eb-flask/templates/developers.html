@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Globar Fire Data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/developers.css">
+</head>
+<body class="dark-page">
+
+<!-- Planet on fire icon -->
+<a href="/"><img class="nav-planet" src="../static/images/planet-fire.png"></a>
+
+<!-- Navigation -->
+
+<nav role="navigation">
+  <ul>
+      <li id="button-style"><a href="/news">Global Fire News</a></li>
+      <li id="button-style"><a href="/stats">Stats</a></li>
+      <li id="button-style"><a href="/predictions">Predictions</a></li>
+      <li id="button-style"><a href="/data">Data</a></li>
+      <li id="button-style"><a href="/developers">Developers</a></li>
+  </ul>
+</nav>
+
+<div class="container" id='photos' >
+  <div class="row">
+    <h1 id="links" class="font-weight-light text-white">Meet the Team</h1>   
+<table class="table table-hover table-dark">
+  <tbody>
+    <tr>
+      <td scope="col" ><img id="pics" src="../static/images/yinka.jpeg" class="card-img-top developers-images" alt="Image of Developer"></td>
+      <td scope="col" ><img id="pics" src="../static/images/fran.jpeg" class="card-img-top developers-images" alt="Image of Developer"></td>
+      <td scope="col" ><img id="pics" src="../static/images/yatish.jpeg" class="card-img-top developers-images" alt="Image of Developer"></td>
+      <td scope="col" ><img id="pics" src="../static/images/yash.jpeg" class="card-img-top developers-images" alt="Image of Developer"></td>
+      <td scope="col" ><img id="pics" src="../static/images/irene.jpeg" class="card-img-top developers-images" alt="Image of Developer"></td>
+    </tr>
+    <tr>
+      <td id='names'>Yinka</td>
+      <td id='names'>Fran</td>
+      <td id='names'>Yatish</td>
+      <td id='names'>Yash</td>
+      <td id='names'>Irene</td>
+    </tr>
+    <tr>
+      <td scope="row"><a href="https://www.linkedin.com/in/aadeyinka/" target="_blank"><img class='lnk' src="../static/images/linkedin.png"></a></td>
+      <td scope="row"><a href="https://www.linkedin.com/in/franciscotang/" target="_blank"><img class='lnk' src="../static/images/linkedin.png"></a></td>
+      <td scope="row"><a href="https://www.linkedin.com/in/yatish-mullaji-095b5b62/" target="_blank"><img class='lnk' src="../static/images/linkedin.png"></a></td>
+      <td scope="row"><a href="https://www.linkedin.com/in/yashwinie/" target="_blank"><img class='lnk' src="../static/images/linkedin.png"></a></td>
+      <td scope="row"><a href="https://www.linkedin.com/in/ireneshtepa/" target="_blank"><img class='lnk' src="../static/images/linkedin.png"></a></td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+  <!-- API key for Mapbox -->
+<script type="text/javascript" src="../static/js/config.js"></script>
+  <!-- JS -->
+<script type="text/javascript" src="../static/js/logic.js"></script>
+</body>
+</html>
