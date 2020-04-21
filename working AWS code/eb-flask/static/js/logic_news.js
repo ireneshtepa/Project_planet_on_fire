@@ -1,4 +1,4 @@
-// condition for dropdown menue
+// condition for dropdown menu
 var continents = [
   {"Name": "Africa", "Location": [7.026601, 17.517169], "Zoom": 5},
   {"Name": "Asia", "Location": [24.704768, 92.144528], "Zoom": 5},
@@ -8,5 +8,21 @@ var continents = [
   {"Name": "South America", "Location": [3.376254, -61.164163], "Zoom": 5}
 ];
 
+url = "http://127.0.0.1:5000/api3"
 
 
+d3.json(url, function(data) {
+  for (i = 0; i < data.url[0].url.length; i++) {
+    var sliced=data.url[0].url[i].split("status/")
+    var sliced2=sliced[1].split('?ref')[0]
+    // tweets.push(parseInt(sliced2))
+
+    twttr.widgets.createTweet(
+      sliced2,
+      document.getElementById('twitter-feed'),
+      {
+        theme: 'dark'
+      }
+
+    )};
+});
