@@ -78,7 +78,7 @@ def scrapeTwitter():
     for i in location_list:
         location = i["region"]
         try:
-            location_search = api.GetSearch(f"wildfire news {location}"), 
+            location_search = api.GetSearch(f"wildfire news {location} -Coronavirus -virus -corona -COVID, -COVID19 -COVID-19, -Trump, -Putin, -outbreak"), 
             #print(f"Processing {location}")
             
             for tweet in location_search[0]:
