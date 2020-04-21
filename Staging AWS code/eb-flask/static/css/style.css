@@ -254,3 +254,23 @@ option {
   font-family: Verdana;
   margin-left: -10px;
 }
+
+.loading {
+  color: white;
+  position: relative;
+  margin-left: 600px;
+  margin-top: 200px;
+}
+
+.ETL {
+  width: 31%;
+  position: absolute;
+  margin-top: -400px;
+  margin-left: 700px;
+}
+/* 
+.ETL:on {
+  width: 50%;
+  margin-left: 100px;
+  margin-top: -600px;
+} */
