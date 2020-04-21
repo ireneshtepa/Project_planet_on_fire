@@ -11,18 +11,36 @@ var continents = [
 url = "http://127.0.0.1:5000/api3"
 
 
+
 d3.json(url, function(data) {
+  tweets=[]
+
   for (i = 0; i < data.url[0].url.length; i++) {
     var sliced=data.url[0].url[i].split("status/")
     var sliced2=sliced[1].split('?ref')[0]
-    // tweets.push(parseInt(sliced2))
+    tweets.push(sliced2)
+    // console.log(sliced2)
+    
+      // console.log(tweets[0])
+  };
 
-    twttr.widgets.createTweet(
-      sliced2,
-      document.getElementById('twitter-feed'),
-      {
-        theme: 'dark'
-      }
+    function onlyUnique(value, index, self) { 
+      return self.indexOf(value) === index;
+  };
 
-    )};
+  var unique = tweets.filter(onlyUnique);
+
+  for (i = 0; i < unique.length; i++) {
+
+  twttr.widgets.createTweet(
+    unique[i],
+    document.getElementById('twitter-feed'),
+    {theme: 'dark'}
+    
+  
+  )};
+
+   console.log(unique)
+
 });
+
