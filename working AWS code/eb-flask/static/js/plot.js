@@ -604,7 +604,7 @@ function getData() {
   var dropdownMenu1 = d3.select("#selDataset1");
   var dataset1 = dropdownMenu1.property("value");  
 
-  console.log(dataset);
+  //console.log(dataset);
 
   
   //var x = [];
@@ -658,7 +658,6 @@ function getData() {
       
       //Plotly.restyle("plot", "x", [x]);
       //Plotly.restyle("plot", "y", [y]);
-
       //Plotly.relayout("plot", data);
       //Plotly.relayout("plot", update);
       Plotly.newPlot("plot", data, update);
@@ -1460,9 +1459,10 @@ if (dataset === 'Yearly' && dataset1 === 'All') {
               ticks: 'outside',
               showline: true,
     }
+    
+  }
     //Plotly.restyle("plot", "x", [x]);
     //Plotly.restyle("plot", "y", [y]);
-  }
     //Plotly.relayout("plot", data);
     //Plotly.relayout("plot", update);
     Plotly.newPlot("plot", data, update);
