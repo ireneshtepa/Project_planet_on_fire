@@ -110,12 +110,19 @@ sum12_europe = 0   
 years = ["2015", "2016", "2017", "2018", "2019"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-url_africa= "http://127.0.0.1:5000/api/africa_historic_data"
-url_australia= "http://127.0.0.1:5000/api/australia_historic_data"
-url_asia= "http://127.0.0.1:5000/api/asia_historic_data"
-url_europe= "http://127.0.0.1:5000/api/europe_historic_data"
-url_north_america= "http://127.0.0.1:5000/api/north_america_historic_data"
-url_south_america= "http://127.0.0.1:5000/api/south_america_historic_data"
+// url_africa= "http://127.0.0.1:5000/api/africa_historic_data"
+// url_australia= "http://127.0.0.1:5000/api/australia_historic_data"
+// url_asia= "http://127.0.0.1:5000/api/asia_historic_data"
+// url_europe= "http://127.0.0.1:5000/api/europe_historic_data"
+// url_north_america= "http://127.0.0.1:5000/api/north_america_historic_data"
+// url_south_america= "http://127.0.0.1:5000/api/south_america_historic_data"
+
+url_africa= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/africa_historic_data"
+url_australia= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/australia_historic_data"
+url_asia= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/asia_historic_data"
+url_europe= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/europe_historic_data"
+url_north_america= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/north_america_historic_data"
+url_south_america= "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api/south_america_historic_data"
 
 
 

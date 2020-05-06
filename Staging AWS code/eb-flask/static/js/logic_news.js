@@ -8,7 +8,7 @@ var continents = [
   {"Name": "South America", "Location": [3.376254, -61.164163], "Zoom": 5}
 ];
 
-url = "http://127.0.0.1:5000/api3"
+url = "http://flask-19.eba-9jgnz35i.us-east-2.elasticbeanstalk.com/api3"
 
 
 
