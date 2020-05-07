@@ -22,9 +22,10 @@ With the number of bush fires in the year 2019 and it's devostating after effect
 
 ## Contributers
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
+* [Fran](https://github.com/Yatish-Mullaji)
+* [Irene](https://github.com/ireneshtepa)
+* [Yash](https://github.com/Yashwinie)
+* [Yatish](https://github.com/Yatish-Mullaji)
+* [Yinka](https://github.com/Deyinka)
 
 
