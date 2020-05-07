@@ -1,9 +1,10 @@
 # Planet On Fire!
 
-Visit dataplanet.info
+### Visit [dataplanet.info](http://www.dataplanet.info/)
+
 With the number of bush fires in the year 2019 and it's devostating after effects in Australia, the idea of obeservating the current fire occurances around the world, capturing the media using Twitter news feeds and analysis of historical fire data for all the continents is tranformed into a dashboard for the end user. Moreover, historical fire data was interpreted to find anomalies and created machine learning model to predict the instances of the bush fires in Australia for the year 2020. 
 
-### Server Code: [Git Repo] (https://github.com/ireneshtepa/Project_planet_on_fire) 
+### Server Code: [Git Repo](https://github.com/ireneshtepa/Project_planet_on_fire) 
 
 ## Features
 
@@ -14,13 +15,9 @@ With the number of bush fires in the year 2019 and it's devostating after effect
 - **Data:** Page includes links to data sources as well as restful APIs created for this project. 
 - **Developers:** Pageage introduces you to the team that created this resource.
 
-### Prerequisites
+## Architecture
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 
 ### Installing
 
