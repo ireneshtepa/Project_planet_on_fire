@@ -23,6 +23,6 @@ With the number of bush fires in the year 2019 and it's devostating after effect
 
 * [Fran](https://github.com/Franktang2)
 * [Irene](https://github.com/ireneshtepa)
-* [Yash]()
+* [Yash](https://github.com/Yashwinie)
 * [Yatish](https://github.com/Yatish-Mullaji)
-* [Yinka]()
+* [Yinka](https://github.com/Deyinka)
