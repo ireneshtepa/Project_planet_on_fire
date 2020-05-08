@@ -17,7 +17,7 @@ With the number of bush fires in the year 2019 and it's devostating after effect
 
 ## Architecture
 
-![](/Architecture.jpg?raw=true "Optional Title")
+![](/Architecture.png?raw=true "Optional Title")
 
 ## Contributers
 
