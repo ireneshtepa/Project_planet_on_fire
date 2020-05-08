@@ -1,10 +1,11 @@
-# Planet On Fire!
+# Oscar Winning Movies!
 
-### Visit [dataplanet.info](http://www.dataplanet.info/)
+A database was created about the movies which won an Oscar since the year 1960. Along with the name of the movie, directot of the respectedd movie, production studio of the it and the IMDB rating was tabulated.
 
-With the number of bush fires in the year 2019 and it's devostating after effects in Australia, the idea of obeservating the current fire occurances around the world, capturing the media using Twitter news feeds and analysis of historical fire data for all the continents is tranformed into a dashboard for the end user. Moreover, historical fire data was interpreted to find anomalies and created machine learning model to predict the instances of the bush fires in Australia for the year 2020. 
+An ETL pipeline was created to create the database. For the extraction data source such as[filmsite](https://www.filmsite.org/bestpics4.html) and [omdbapi](http://www.omdbapi.com/)
 
-### Server Code: [Git Repo](https://github.com/ireneshtepa/Project_planet_on_fire) 
+
+### Server Code: [Git Repo](https://github.com/ireneshtepa/Project-2---ETL) 
 
 ## Features
 
@@ -24,8 +25,6 @@ With the number of bush fires in the year 2019 and it's devostating after effect
 
 * [Fran](https://github.com/Franktang2)
 * [Irene](https://github.com/ireneshtepa)
-* [Yash](https://github.com/Yashwinie)
 * [Yatish](https://github.com/Yatish-Mullaji)
-* [Yinka](https://github.com/Deyinka)
 
 
