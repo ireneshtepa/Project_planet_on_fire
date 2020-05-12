@@ -2,7 +2,7 @@
 
 ### Visit [dataplanet.info](http://www.dataplanet.info/)
 
-With the number of bush fires in the year 2019 and it's devostating after effects in Australia, the idea of obeservating the current fire occurances around the world, capturing the media using Twitter news feeds and analysis of historical fire data for all the continents is tranformed into a dashboard for the end user. Moreover, historical fire data was interpreted to find anomalies and created machine learning model to predict the instances of the bush fires in Australia for the year 2020. 
+With the number of bush fires in the year 2019 and it's devastating after effects in Australia, the idea of obeserving the current fire occurances around the world, capturing the media using Twitter news feeds and analysis of historical fire data for all the continents is tranformed into a dashboard for the end user. Moreover, historical fire data was interpreted to find anomalies and created machine learning model to predict the instances of the bush fires in Australia for the year 2020. 
 
 ### Server Code: [Git Repo](https://github.com/ireneshtepa/Project_planet_on_fire) 
 
