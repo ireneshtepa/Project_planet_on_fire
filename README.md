@@ -1,8 +1,6 @@
-# Planet On Fire!
+# Planet On Fire
 
 With the number of bush fires in the year 2019 and devastating after effects in Australia, we created a dashboard for end users from the observation of the current fire occurrences around the world, the social media use of Twitter news feeds on wild fire and analysis of historical fire data for all the continents. Also, the historical fire data was interpreted to understand anomalies and machine learning model was used to predict the instances of the bush fires in Australia for the year 2020.
-
-### Server Code: [Git Repo](https://github.com/ireneshtepa/Project_planet_on_fire) 
 
 ## Features
 
